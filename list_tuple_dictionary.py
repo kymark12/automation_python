@@ -25,9 +25,9 @@ dic = {"a": 2, 4: "mrk", "c": "Hello world"}
 print(dic[4])
 print(dic["c"])
 # building a blank dictionary
-dictionary = {}
-dictionary["firstname"] = "Mark Ivan"
-dictionary["lastname"] = "Berbenzana"
-dictionary["gender"] = "Male"
-print(dict)
-print(dict["lastname"])
+blnk_dict = {}
+blnk_dict["firstname"] = "Mark Ivan"
+blnk_dict["lastname"] = "Berbenzana"
+blnk_dict["gender"] = "Male"
+print(blnk_dict)
+print(blnk_dict["lastname"])
