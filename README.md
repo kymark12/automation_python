@@ -9,6 +9,11 @@ This repo holds files related to the selenium-python course by Rahul Shetty in U
 * Different array type variables (List, Tuple, Dictionary)
 * Condition (if-else statements)
 * Loops (For, While, Do-While)
+* String manipulation
+* Read and Write files
+* Assertio and Exception Handling
+* Selenium basics
+* Selectors
 
 ## Reference
 * Udemy Course - https://www.udemy.com/course/learn-selenium-automation-in-easy-python-language/
