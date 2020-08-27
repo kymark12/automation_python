@@ -1,4 +1,4 @@
-from oop_lesson import Calculator
+from basic_python_for_automation.oop_lesson import Calculator
 
 
 class ChildImp(Calculator):

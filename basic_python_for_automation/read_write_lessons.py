@@ -18,10 +18,10 @@
 # file.close()
 
 # To open a file in 'read-only' add r on the open statement, and w for write ('filename.txt', 'r')
-with open('readwritetest.txt', 'r') as reader:
+with open('../readwritetest.txt', 'r') as reader:
     content = reader.readlines()  # abc, dvdsf, cat, dog, elephant
     reversed(content)  # elephant, dog, cat, dvdsf, abc
-    with open('readwritetest.txt', 'w') as writer:
+    with open('../readwritetest.txt', 'w') as writer:
         for line in reversed(content):
             writer.write(line)
 
