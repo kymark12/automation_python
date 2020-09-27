@@ -14,6 +14,8 @@ This repo holds files related to the selenium-python course by Rahul Shetty in U
 * Assertio and Exception Handling
 * Selenium basics
 * Selectors
+* Functional test creation
+* Framework building (Pytest, Data-driven, HTML reports, etc.)
 
 ## Reference
 * Udemy Course - https://www.udemy.com/course/learn-selenium-automation-in-easy-python-language/
