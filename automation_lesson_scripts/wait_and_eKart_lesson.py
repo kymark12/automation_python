@@ -72,4 +72,5 @@ for amount in values:
     val_sum = val_sum + int(amount.text)
 print("Sum of the total amount per product in the table is = "+val_sum)
 total_amount = int(driver.find_element_by_class_name("totAmt").text)
+# Assert sum of total amount in the table per item vs. total amount in breakdown section
 assert val_sum == total_amount
