@@ -1,4 +1,4 @@
-# Selenium Python lesson files from Rahul Shetty
+# Selenium Python lesson files from Rahul Shetty Course
 
 ## Overview
 This repo holds files related to the selenium-python course by Rahul Shetty in Udemy, this is for personal reference only, but I may use this to teach python in the future.
