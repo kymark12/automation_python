@@ -1,2 +1,6 @@
 *geckodriver.log
 /venv/
+/.pytest_cache/
+/archived_logs/
+/latest_logs/
+/.idea/
