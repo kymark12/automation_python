@@ -1,16 +1,9 @@
-import time
-
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
 from selenium import webdriver
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from selenium.webdriver.support.wait import WebDriverWait
-dotenv_path = join(dirname(__file__), '../.env')
-load_dotenv(dotenv_path)
-
+load_dotenv(find_dotenv())
 '''
 Test Case
 ------------------------------------------------

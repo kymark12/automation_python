@@ -4,10 +4,8 @@ Selenium has a method to execute javascript code in it
 """
 from selenium import webdriver
 import os
-from os.path import join, dirname
-from dotenv import load_dotenv
-dotenv_path = join(dirname(__file__), '../.env')
-load_dotenv(dotenv_path)
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 
 driver = webdriver.Chrome(executable_path=os.getenv('CHROME'))
 driver.get("https://rahulshettyacademy.com/angularpractice/")
