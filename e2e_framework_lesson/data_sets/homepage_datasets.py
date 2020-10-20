@@ -1,5 +1,4 @@
 import openpyxl
-import os
 from os.path import join, dirname
 workbook_path = join(dirname(__file__), 'homepage_data.xlsx')
 
