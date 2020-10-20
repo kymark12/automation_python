@@ -1,3 +1,5 @@
+import pytest
+
 from e2e_framework_lesson.page_objects.checkout_page import CheckoutPage
 from e2e_framework_lesson.page_objects.home_page import HomePage
 from e2e_framework_lesson.utilities.BaseClass import BaseClass
@@ -5,28 +7,30 @@ from e2e_framework_lesson.utilities.BaseClass import BaseClass
 
 class TestClass(BaseClass):
 
-    def test_e2e(self):
+    @pytest.fixture(params=["Blackberry", "iphone X"])
+    def get_desired_product(self, request):
+        return request.param
+
+    def test_e2e(self, get_desired_product):
+        # log object
+        log = self.get_logger()
+
+        # page object method
         home_page = HomePage(self.driver)
+
         # test case actions
-        home_page.shop_items().click()
-        checkout_page = CheckoutPage(self.driver)
-        desired_product = "Blackberry"
-        products = checkout_page.get_products()
-        for product in products:
-            product_name = product.find_element_by_xpath(checkout_page.get_product_name()).text
-            if product_name == desired_product:
-                product.find_element_by_xpath(checkout_page.get_product_checkout()).click()
-        self.driver.find_element_by_css_selector("a[class*='btn-primary']").click()
-        self.driver.find_element_by_xpath("//button[@class='btn btn-success']").click()
-        self.driver.find_element_by_id("country").send_keys("ind")
-        self.driver.find_element_by_link_text("India").click()
-        self.driver.find_element_by_xpath("//div[@class='checkbox checkbox-primary']").click()
-        self.driver.find_element_by_css_selector("[type='submit']").click()
-        success_text = self.driver.find_element_by_css_selector(".alert-success").text
+        checkout_page = home_page.shop_items()
+        desired_product = get_desired_product
+        log.info(f"The desired product is {desired_product}")
+        self.product_selection(desired_product, co_page=checkout_page)
+        log.info(f"{desired_product} is now added to the cart")
+        confirm_page = checkout_page.click_checkout()
+        log.info("Entering country name as ind")
+        confirm_page.confirm_page_actions()
+        log.info("India is selected as the country")
+        success_text = confirm_page.get_success_text().text
+        log.info(f"Success message: {success_text} is received")
 
         # Assert success message
-        try:
-            assert "Success! Thank you!" in success_text
-        except Exception as e:
-            print(e)
-            self.driver.get_screenshot_as_file("screen.png")
+        self.assert_success_message(success_text)
+        self.driver.refresh()
