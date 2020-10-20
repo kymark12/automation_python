@@ -12,15 +12,19 @@ def pytest_addoption(parser):
     parser.addoption(
         "--browser_name", action="store", default="chrome", help="selects what browser to run"
     )
+    parser.addoption("--nohead", action="store_true", default=False,
+                     help="Selects whether a test is headless or not")
 
 
 @pytest.fixture(scope='class')
 def setup(request):
     global driver
     browser_name = request.config.getoption("browser_name")
+    headless = request.config.getoption("nohead")
     if browser_name == 'chrome':
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument('--headless')
+        if headless:
+            chrome_options.add_argument("--headless")
         chrome_options.add_argument('--window-size=1920,1080')
         chrome_options.add_argument('--ignore-cerficate-errors')
         driver = webdriver.Chrome(executable_path=os.getenv('CHROME'), options=chrome_options)

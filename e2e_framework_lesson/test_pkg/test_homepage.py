@@ -2,9 +2,9 @@ from selenium.webdriver.support.select import Select
 from selenium import webdriver
 import pytest
 
-from data_sets.homepage_datasets import HomePageData
-from page_objects.home_page import HomePage
-from utilities.BaseClass import BaseClass
+from e2e_framework_lesson.data_sets.homepage_datasets import HomePageData
+from e2e_framework_lesson.page_objects.home_page import HomePage
+from e2e_framework_lesson.utilities.BaseClass import BaseClass
 
 
 class TestHomePage(BaseClass):
@@ -25,6 +25,6 @@ class TestHomePage(BaseClass):
         assert ("Success" in alertText)
         self.driver.refresh()
 
-    @pytest.fixture(params=HomePageData.test_homepage_data)
+    @pytest.fixture(params=HomePageData.get_test_data(test_case_name="T1"))
     def get_data(self, request):
         return request.param
