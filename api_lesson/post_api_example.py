@@ -4,8 +4,8 @@ from api_lesson.utilities.resources import *
 from api_lesson.utilities.configuration import *
 
 
-urls = [getConfig()['API']['endpoint']+API_resources.add_book,
-        getConfig()['API']['endpoint']+API_resources.delete_book]
+urls = [getConfig()['API']['endpoint'] + ApiResources.add_book,
+        getConfig()['API']['endpoint'] + ApiResources.delete_book]
 
 book_payload = {
     "name": "Learn API Automation with Python",
