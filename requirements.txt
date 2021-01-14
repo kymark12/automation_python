@@ -5,3 +5,4 @@ python-dotenv~=0.15.0
 openpyxl~=3.0.5
 requests~=2.25.0
 mysql-connector-python~=8.0.22
+pytest-playwright==0.0.10

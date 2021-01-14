@@ -34,3 +34,12 @@ def getDBConnection():
             return conn
     except Error as e:
         print(e)
+
+
+def getQuery(query):
+    conn = getDBConnection()
+    cursor = conn.cursor()
+    cursor.execute(query)
+    row = cursor.fetchone()
+    conn.close()
+    return row

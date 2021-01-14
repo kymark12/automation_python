@@ -14,7 +14,9 @@ book_payload = {
     "author": "Aya"
 }
 
-addbook_response = requests.post(urls[0], json=addBookPayload('f515431'),
+query = 'select * from Books'
+
+addbook_response = requests.post(urls[0], json=buildPayLoadFromDB(query),
                                  headers={"Content-Type": "application/json"})
 
 print(addbook_response.json())
