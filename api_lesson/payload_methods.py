@@ -2,10 +2,9 @@ from api_lesson.utilities.configuration import *
 
 
 def addBookPayload(isbn, aisle):
-    unique_isbn = isbn + aisle
     body = {
         "name": "Learn API Automation with Python",
-        "isbn": unique_isbn,
+        "isbn": isbn,
         "aisle": aisle,
         "author": "Aya"
     }
