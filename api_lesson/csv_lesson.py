@@ -16,3 +16,7 @@ print(stats)
 Index = names.index('sam')
 loan_status = stats[Index]
 print("sams loan status is " + loan_status)
+
+with open('D:/Selenium_Python/pythonProject/api_lesson/utilities/loanapp.csv', 'a') as w_file:
+    write = csv.writer(w_file)
+    write.writerow(["Bob","rejected"])
