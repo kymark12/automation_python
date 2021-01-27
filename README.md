@@ -1,4 +1,4 @@
-# Selenium Python lesson files from Rahul Shetty Course
+# Python-based automation lesson files from Rahul Shetty Course
 
 ## Overview
 This repo holds files related to the selenium-python course by Rahul Shetty in Udemy, this is for personal reference only, but I may use this to teach python in the future.
@@ -16,6 +16,14 @@ This repo holds files related to the selenium-python course by Rahul Shetty in U
 * Selectors
 * Functional test creation
 * Framework building (Pytest, Data-driven, HTML reports, etc.)
+
+## Back-end automation Python Lessons
+* Parsing JSON files using Python
+* API automation framework building (Config files, Utilities, etc.)
+* DB connection and interaction with API
+* BDD integration
+* CSV parsing and processing
+* Web scrapping for data science projects
 
 ## REST API Automation Lessons
 * Read and Write JSON and parsing using Python methods
